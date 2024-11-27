@@ -19,6 +19,9 @@ const DB_CONFIG = {
   user: "upender", 
   password: process.env.DB_PASSWORD, 
   database: process.env.DB_DATABASE,
+  waitForConnections: true,   
+  connectionLimit: 10,
+  
 };
 
 // Initialize MySQL Connection Pool
