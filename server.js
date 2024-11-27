@@ -25,7 +25,7 @@ const DB_CONFIG = {
 const pool = mysql.createPool(DB_CONFIG);
 
 
-// Fetch Companies from Finnhub and Store in MySQL
+// Fetch Companies
 app.get("/fetch-companies", async (req, res) => {
   const {offset}=req.query
   try {
