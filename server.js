@@ -6,6 +6,7 @@ const bcrypt=require('bcrypt')
 const jwt=require('jsonwebtoken')
 const cors=require('cors')
 require('dotenv').config()
+
 const app = express();
 app.use(express.json())
 app.use(cors())
@@ -96,6 +97,11 @@ app.post('/api/signin', async (req, res) => {
   } finally {
     if (connection) connection.release();
   }
+});
+
+// Test route
+app.get('/', (req, res) => {
+  res.send('Hello World!');
 });
 
 // Start the Server
