@@ -16,6 +16,7 @@ app.use(cors())
 // Configuration
 const PORT = process.env.PORT || 3008
 const DB_CONFIG = {
+  host:'%',
   user: "upender", 
   password: process.env.DB_PASSWORD, 
   database: process.env.DB_DATABASE,
@@ -79,7 +80,7 @@ app.post('/api/signin', async (req, res) => {
   try {
     connection = await pool.getConnection();
     const [rows] = await connection.execute(`SELECT * FROM users WHERE email = ?`, [email]);
-    if (rows.length === 0) {
+    if (rows[0].length === 0) {
       return res.status(401).json({ error: 'Invalid email or password' });
     }
     const user = rows[0];
