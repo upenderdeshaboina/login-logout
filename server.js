@@ -16,7 +16,7 @@ app.use(cors())
 // Configuration
 const PORT = process.env.PORT || 3008
 const DB_CONFIG = {
-  host:'localhost',
+  host:'127.0.0.1',
   user: "root", 
   password: process.env.DB_PASSWORD, 
   database: process.env.DB_DATABASE,
